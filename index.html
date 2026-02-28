@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Proyecto Geositio</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <title>TRABAJO FINAL</title>
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+</head>
+
+<body>
+    <header class="bloque1">
+        <div class="header-stack">
+            <div class="logo-container">
+                <img src="/static/img/FCEUNLP.png" alt="Logo UNLP" class="logo-unlp">
+            </div>
+
+            <div class="info-container">
+                <h1 class="universidad">Universidad Nacional de La Plata</h1>
+                <p class="facultades">Facultad de Ciencias Económicas — Facultad de Ciencias Naturales y Museos</p>
+                <p class="diplomatura">Diplomatura de Posgrado en Turismo y Ambiente</p>
+                <div class="separador-corto"></div>
+                <p class="autores">Ricardo Arce Torres — Marcelo Rivarola</p>
+            </div>
+        </div>
+    </header>
+
+    <nav id="navbar">
+        <a class="hamburger">
+            <span class="material-symbols-outlined">
+                menu
+            </span>
+            <img src="/static/img/menu_FILL0_wght400_GRAD0_opsz24.svg" alt="Menu" />
+        </a>
+
+        <ul class="menu">
+            <li><a href="#presentacion">Inicio</a></li>
+            <li><a href="#presentacion1">Pasos</a></li>
+            <li><a href="#mapa">Mapa</a></li>
+
+            <li class="sbm">
+                <a href="#atractivos">Elementos Geológicos </a>
+                <ul class="submenu">
+                    <li class="menu-link" data-id="brujas"><a href="#brujas">Caverna de las brujas</a>
+                    <li>
+                    <li class="menu-link" data-id="cajongrande" .><a href="#cajongrande">Termas de Cajón grande</a></li>
+                    <li class="menu-link" data-id="maulle"><a href="#maule">Laguna del Maulle</a></li>
+                    <li class="menu-link" data-id="diablo"><a href="#diablo">Muela del diablo</a></li>
+                    <li class="menu-link" data-id="monjesblancos"><a href="#monje">Monjes blancos</a></li>
+                    <li class="menu-link" data-id="viejo"><a href="#viejo">Invernada del viejo</a></li>
+                    <li class="menu-link" data-id="mallines"><a href="#mallines">Los Mallines colgados</a></li>
+                    <li class="menu-link" data-id="peteroa"><a href="#peteroa">Planchón Peteroa</a></li>
+                    <li class="menu-link" data-id="nina"><a href="#nina">Laguna de la Niña Encantada</a></li>
+                    <li class="menu-link" data-id="molles"><a href="#molles">Termas de Los Molles</a></li>
+                    <li class="menu-link" data-id="peteroa"><a href="#animas">Pozo de Las Ánimas</a></li>
+                    <li class="menu-link" data-id="hermoso"><a href="#hermoso">Laguna de Valle Hermoso</a></li>
+                    <li class="menu-link" data-id="flaco"><a href="#tflaco">Termas del Flaco</a></li>
+                </ul>
+            </li>
+            <li><a href="#footer">Autores</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="slides">
+            <section id="presentacion">
+                <span class="boxpresentacion">Geositios: formaciones geológicas como el proceso tectónico de placas con
+                    la formación de la cordillera fósiles, dolinas, huellas de dinosaurios, Volcanes, Aguas Termales,
+                    Potreros de Cordillera, Valles, Ríos, Lagunas y diferentes formaciones Geológicas de interés
+                    turísticos.
+                </span>
+                <img class="viñedo" src="/static/img/montaña.jpg" alt="Girasoles" style="width: 100%; height: 100%" />
+            </section>
+            <section id="presentacion" class="seccion-binacional">
+                <div class="contenido-texto">
+                    <h2>Corredores GeoTurísticos Binacionales</h2>
+                    <p>Corredores GeoTurísticos Binacionales: tres pasos internacionales que
+                        conectan con la Región de O Higgins (Paso Las Damas), Región del Maule (Paso Pehuenche y Paso
+                        Planchón - Vergara). Esta región se caracteriza por tener importantes formaciones geológicas
+                        como el
+                        proceso tectónico de placas con la formación de la cordillera fósiles, dolinas, huellas de
+                        dinosaurios, Volcanes, Aguas Termales, Potreros de Cordillera, Valles, Ríos, Lagunas y
+                        diferentes
+                        formaciones Geológicas de interés turísticos.
+                    </p>
+                </div>
+                <div class="contenido-imagen">
+                    <img src="/static/img/pasos internacionales.png" alt="Pasos Internacionales">
+                </div>
+            </section>
+
+            <section id="mapa">
+                <div id="map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d116037.45422604764!2d-70.51935798702782!3d-35.96100090598027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x96701f913862b461%3A0xf2ad86477ad16bdb!2sPaso%20Pehuenche!5e0!3m2!1ses!2sar!4v1772285694599!5m2!1ses!2sar"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </section>
+
+
+
+
+
+            <section id="atractivos">
+                <div class="contenedor-consultas">
+
+                    <div class="carta" id="brujas">
+
+                        <div class="cara frente">
+                            <div class="carta-imagen">
+                                <img src="/static/img/brujas.jpg" alt="Caverna de las Brujas">
+                            </div>
+
+                            <div class="carta-info">
+                                <h8>Caverna de Las Brujas</h8>
+                                <p>
+                                    Las Cavernas de las Brujas son un sistema vivo, es decir que siguen formándose hasta
+                                    el día de hoy. Esto es posible gracias a que los dos agentes principales para la
+                                    formación de cavernas siguen activos. Estos actores son las rocas carbonáticas y las
+                                    aguas meteóricas (lluvia y nieves) que poco a poco las disuelven. Las rocas
+                                    carbonáticas más comunes son las calizas, compuestas principalmente por el mineral
+                                    calcita, pero también existen otras, como las dolomías, compuestas principalmente
+                                    por el mineral dolomita. Sin embargo, las aguas meteóricas por sí solas no son
+                                    capaces de disolver estas rocas, ya que es necesario acidificarlas primero. La
+                                    acidificación de las aguas se produce cuando estas se filtran a través del suelo, el
+                                    cual, gracias a la acción y descomposición de las plantas, provee el CO2 necesario
+                                    para volverlas más ácidas. Una vez se cuenta con estos dos elementos, solo se
+                                    necesita tiempo para ser capaces de observar este tipo de paisaje, conocido por los
+                                    geólogos como paisaje kárstico o de tipo karst (Figura 8). Este tiene elementos que
+                                    lo hacen único, tanto en superficie como bajo tierra. En superficie veremos una
+                                    serie de elementos geomorfológicos que indican la presencia de un relieve kárstico.
+                                    Las Cavernas de las Bru jas cuentan con varios de ellos. Algunos ejemplos son las
+                                    dolinas, depresiones con formas circulares, formadas por la disolución de las
+                                    calizas bajo suelo. Cuando se ha disuelto mucha roca bajo tierra, el suelo pierde
+                                    sustento y tiende a derrumbarse, generando estas de presiones. Cuando se forma una
+                                    dolina en lugares donde la cueva pasa cercana a la superficie se pueden formar
+                                    agujeros que permiten mirar hacia el interior de la caverna. Estos agujeros llevan
+                                    el nombre de ventanas.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="carta" id="cajongrande">
+
+                        <div class="cara frente">
+                            <div class="carta-imagen">
+                                <img src="/static/img/cajongrande.jpg" alt="Cajón Grande">
+                            </div>
+
+                            <div class="carta-info">
+                                <h8>Termas de Cajón Grande</h8>
+                                <p>
+                                    Las Cavernas de las Brujas son un sistema vivo, es decir que siguen formándose hasta
+                                    el día de hoy. Esto es posible gracias a que los dos agentes principales para la
+                                    formación de cavernas siguen activos. Estos actores son las rocas carbonáticas y las
+                                    aguas meteóricas (lluvia y nieves) que poco a poco las disuelven. Las rocas
+                                    carbonáticas más comunes son las calizas, compuestas principalmente por el mineral
+                                    calcita, pero también existen otras, como las dolomías, compuestas principalmente
+                                    por el mineral dolomita. Sin embargo, las aguas meteóricas por sí solas no son
+                                    capaces de disolver estas rocas, ya que es necesario acidificarlas primero. La
+                                    acidificación de las aguas se produce cuando estas se filtran a través del suelo, el
+                                    cual, gracias a la acción y descomposición de las plantas, provee el CO2 necesario
+                                    para volverlas más ácidas. Una vez se cuenta con estos dos elementos, solo se
+                                    necesita tiempo para ser capaces de observar este tipo de paisaje, conocido por los
+                                    geólogos como paisaje kárstico o de tipo karst (Figura 8). Este tiene elementos que
+                                    lo hacen único, tanto en superficie como bajo tierra. En superficie veremos una
+                                    serie de elementos geomorfológicos que indican la presencia de un relieve kárstico.
+                                    Las Cavernas de las Bru jas cuentan con varios de ellos. Algunos ejemplos son las
+                                    dolinas, depresiones con formas circulares, formadas por la disolución de las
+                                    calizas bajo suelo. Cuando se ha disuelto mucha roca bajo tierra, el suelo pierde
+                                    sustento y tiende a derrumbarse, generando estas de presiones. Cuando se forma una
+                                    dolina en lugares donde la cueva pasa cercana a la superficie se pueden formar
+                                    agujeros que permiten mirar hacia el interior de la caverna. Estos agujeros llevan
+                                    el nombre de ventanas. Finalmente, el valle es el resultado del retroceso de un
+                                    glaciar que, además de producir una forma de “U”, generó un depósito de roca y suelo
+                                    denominado morrena. Estos tipos de depósitos pueden arrastrar grandes bloques de
+                                    roca como los que se pueden apreciar en el Cajón Grande.
+
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="carta" id="maule">
+                        <div class="cara frente">
+                            <div class="carta-imagen">
+                                <img src="/static/img/maule.jpg" alt="maule">
+                            </div>
+
+                            <div class="carta-info">
+                                <h8>Laguna del Maule</h8>
+                                <p>
+                                    La Laguna del Maule (LdM), ubicada a 2165 metros de altura, es un cuerpo de agua
+                                    emplazado en un paisaje que ha sido fuertemente moldeado por la actividad volcánica
+                                    (Figura 4). De hecho, es este mismo volcanismo el que ha generado las condiciones
+                                    geomorfoló gicas necesarias para que el agua se embalse de manera natural aquí. El
+                                    volcanismo de la laguna no es atribuible a un solo volcán, sino que se trata de un
+                                    complejo volcánico, es decir una zona altamente activa donde el material se ha
+                                    emitido a partir de varios conductos. A la fecha se han encontrado 24 de estos
+                                    conductos volcánicos dispuestos de manera anular permitiendo así el encauzamiento
+                                    natural de las aguas.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carta" id="diablo">
+                        <div class="cara frente">
+                            <div class="carta-imagen">
+                                <img src="/static/img/diablo.jpg" alt="diablo">
+                            </div>
+
+                            <div class="carta-info">
+                                <h8>Muela del Diablo</h8>
+                                <p>
+                                    Ubicado a 1690 metros de altura en el frente del Valle los Cóndores, el geositio
+                                    Muela del Diablo corresponde a una peculiar geo forma que es resultado de los
+                                    procesos volcánicos y erosivos que han modelado las laderas del valle. El geositio
+                                    corresponde a basal tos asociados a los procesos volcánicos acontecidos en el
+                                    Plioceno-Pleistoceno, es decir, poseen una edad que varía entre los 5 a 3 millones
+                                    de años. La particular estructura que presenta el elemento se debe a que es un
+                                    conjunto de basaltos columnares, los que se forman a partir del enfriamiento de las
+                                    caras expuestas de las lavas basálticas. Durante este proceso, las lavas se contraen
+                                    produciendo columnas hexagonales o irregulares.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carta" id="monje">
+                        <div class="cara frente">
+                            <div class="carta-imagen">
+                                <img src="/static/img/monjesblancos.jpg" alt="monje">
+                            </div>
+
+                            <div class="carta-info">
+                                <h8>Los Monjes Blancos</h8>
+                                <p>
+                                    Los Monjes Blancos corresponden a una formación rocosa ubicada en la cabecera del
+                                    Valle de los Cóndores, a aproximadamente 2080 metros de altura. Llaman la atención
+                                    por su destacado color blan quecino y sus formas puntiagudas que asemejan penitentes
+                                    de hielo.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carta" id="viejo">
+                        <div class="cara frente">
+                            <div class="carta-imagen">
+                                <img src="/static/img/viejo.jpg" alt="viejo">
+                            </div>
+
+                            <div class="carta-info">
+                                <h8>Invernada del Viejo</h8>
+                                <p>
+                                    Sitio Valles de altura, zona de vegas y mallines, se caracteriza por la presencia
+                                    geológica de aguas minerales apta para el consumo y cordones montañosos con
+                                    presencia de escoriales.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="carta" id="mallines">
+                        <div class="cara frente">
+                            <div class="carta-imagen">
+                                <img src="/static/img/mallines.jpg" alt="mallines">
+                            </div>
+
+                            <div class="carta-info">
+                                <h8>Los Mallines colgados</h8>
+                                <p>
+                                    En este valle se caracteriza por la presencia de arenas blancas volcánicas conocida
+                                    como “las cenizas de las tapaderas” productos de la actividad volcán El Descabezado.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="carta" id="peteroa">
+                        <div class="cara frente">
+                            <div class="carta-imagen">
+                                <img src="/static/img/peteroa.jpg" alt="peteroa">
+                            </div>
+
+                            <div class="carta-info">
+                                <h8>Complejo Volcánico Planchón - Peteroa</h8>
+                                <p>
+                                    El volcán Planchón-Peteroa constituye un aparato volcánico compuesto, ya que a lo
+                                    largo de los últimos 200.000 años aproximadamente, registró la construcción de 3
+                                    edificios superpuestos, con la consecuente migración hacia el norte del conducto
+                                    eruptivo.
+                                    Durante su evolución, se produjo el colapso de la mitad occidental del volcán
+                                    Planchón que generó la avalancha de rocas más extensa registrada en tiempos
+                                    recientes a lo largo del valle del río Claro, en Chile. Este evento catastrófico,
+                                    ocurrido hace 12.000 años aproximadamente, convirtió la cumbre en un gran anfiteatro
+                                    abierto hacia el oeste y piso plano. En este sector se concentró la actividad
+                                    eruptiva en los últimos 10.000 años, que abarcó la formación de cuatro cráteres
+                                    vinculados a explosiones freatomagmáticas que produjeron oleadas y caídas
+                                    piroclásticas, así como también un cono de escoria y colada de lava asociada. En
+                                    comparación con el registro previo, la actividad eruptiva reciente es de naturaleza
+                                    más explosiva y de composición relativamente más silícea.
+                                    En tiempos históricos, desde 1600 aproximadamente, las crónicas y documentos de
+                                    archivo registran entre 15 y 20 erupciones, caracterizadas por su bajo grado de
+                                    explosividad. Las mejor documentadas son aquellas ocurridas en 1991, 2010-2011 y la
+                                    más reciente que se inició el 14 de diciembre de 2018.
+
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="carta" id="nina">
+                        <div class="cara frente">
+                            <div class="carta-imagen">
+                                <img src="/static/img/ninaencantada.jpg" alt="nina">
+                            </div>
+
+                            <div class="carta-info">
+                                <h8>Laguna de la Niña Encantada</h8>
+                                <p>
+                                    La laguna de la niña encantada es uno de los atractivos naturales más visitados de
+                                    Mendoza. Se encuentra en el escorial volcánico de El Infiernillo, rodeada por una
+                                    acumulación de residuos de lava de cráteres cercanos. Con 80 metros de diámetro y
+                                    aguas cristalinas de tono esmeralda, esta laguna es un verdadero tesoro natural. La
+                                    belleza de la laguna se debe en parte a los ríos subterráneos que la alimentan.
+                                    Estos ríos subterráneos provienen de erupciones volcánicas pasadas, donde el
+                                    material incandescente fluyó por el curso del arroyo y cubrió su aporte de agua, que
+                                    ahora es subterráneo. Esto le da a la laguna su transparencia y pureza, permitiendo
+                                    ver truchas arcoíris y peces fontinalis nadando cerca de la orilla.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="carta" id="molles">
+                        <div class="cara frente">
+                            <div class="carta-imagen">
+                                <img src="/static/img/molles.jpg" alt="molles">
+                            </div>
+
+                            <div class="carta-info">
+                                <h8>Termas de Los Molles</h8>
+                                <p>
+                                    Las aguas termales de Termas de Los Molles son famosas por sus propiedades
+                                    curativas. Con una temperatura que oscila entre los 30 y 50 grados Celsius, estas
+                                    aguas son ricas en minerales y nutrientes que pueden ayudar a aliviar el dolor de
+                                    artritis, el estrés y la fatiga. Ubicados a 55 km de la ciudad de Malargüe.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="carta" id="animas">
+                        <div class="cara frente">
+                            <div class="carta-imagen">
+                                <img src="/static/img/animas.jpg" alt="animas">
+                            </div>
+
+                            <div class="carta-info">
+                                <h8>Pozo de Las Ánimas</h8>
+                                <p>
+                                    Está ubicado a 67 km de la ciudad de Malargüe por la ruta 222. En este singular
+                                    paisaje podrá observar dos dolinas que fueron erosionadas por los ríos subterráneos
+                                    originando espejos de aguas verdes con casi 300 metros de diámetro cada uno.
+                                    Algunos lo llaman Trolope-Co o agua del gritadero, en lengua Mapuche, su nombre es
+                                    protagonista de varias leyendas que han transcurrido en la historia de los
+                                    pobladores rurales de generación en generación. La entrada es libre y gratuita y
+                                    también encontrará carteles informativos donde se explican estos procesos.
+                                    El Pozo de las Animas está conformado por dos depresiones, divididas por una
+                                    estrecha separación, que se supone que con el paso de los años terminarán por unir
+                                    los dos pozos en uno solo, debido al proceso de erosión. El tamaño de los pozos se
+                                    aproxima a los 200 metros de diámetro, y tienen unos 80 metros de profundidad hasta
+                                    el lago y otros 20 metros de profundidad por bajo el agua. Las mediciones fueron
+                                    realizadas en 1981 por un equipo de científicos dirigido por Rodolfo Rogelio Rocha.
+                                    Este fenómeno natural ha sido catalogado como una dolina originada por la
+                                    transformación de los depósitos subterráneos de terrenos blandos tales como el yeso
+                                    que, por efecto de las filtraciones de las napas freáticas subterráneas, producen
+                                    una disolución del suelo provocando derrumbes y depresiones del terreno, conformando
+                                    estos grandes pozos de forma cónica en la superficie.
+
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="carta" id="hermoso">
+                        <div class="cara frente">
+                            <div class="carta-imagen">
+                                <img src="/static/img/vallehermoso.jpg" alt="hermoso">
+                            </div>
+
+                            <div class="carta-info">
+                                <h8>Laguna de Valle Hermoso</h8>
+                                <p>
+                                    Valle Hermoso está ubicado a 95 kilómetros de la Ciudad de Malargüe, y a unos 27
+                                    kilómetros del Valle de Las Leñas. Posee lagunas y termas. Sitio de gran interés
+                                    paisajístico.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="carta" id="tflaco">
+                        <div class="cara frente">
+                            <div class="carta-imagen">
+                                <img src="/static/img/tflaco.jpg" alt="tflaco">
+                            </div>
+
+                            <div class="carta-info">
+                                <h8>Termas del Flaco</h8>
+                                <p>
+                                    Las Termas del Flaco, también llamadas Baños del Tinguiririca y Las Vegas del Flaco,
+                                    son unos baños termales ubicados en la comuna de San Fernando Chile a 1750 metros
+                                    sobre el nivel del mar. Desde San Fernando por camino casi completamente de tierra,
+                                    77 kilómetros al suroeste hasta el centro termal.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+            <section id="pie">
+                <footer id="footer">
+                    <div class="footer-container">
+                        <div class="footer-institucion">
+                            <p class="f-univ">Universidad Nacional de La Plata</p>
+                            <p class="f-facultades">Facultad de Ciencias Económicas — Facultad de Ciencias Naturales y
+                                Museos</p>
+                            <p class="f-diplomatura">Diplomatura de Posgrado en Turismo y Ambiente</p>
+                        </div>
+
+                        <hr class="f-separador">
+
+                        <div class="footer-autores">
+                            <div class="autor">
+                                <span class="nombre">Ricardo Arce Torres</span>
+                                <span class="documento">CI 12.479.615-6</span>
+                            </div>
+                            <div class="autor">
+                                <span class="nombre">Marcelo Rivarola</span>
+                                <span class="documento">DNI 17.080.795</span>
+                            </div>
+                        </div>
+
+                        <div class="footer-copy">
+                            <p>Trabajo Final &copy; 2026</p>
+                        </div>
+                    </div>
+                </footer>
+            </section>
+        </div>
+    </main>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let lastScrollTop = 0;
+            const navbar = document.getElementById("navbar");
+
+            window.onscroll = function () {
+                let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+                // Solo actúa si el usuario bajó más de 200px (para pasar el encabezado)
+                if (currentScroll > 200) {
+                    if (currentScroll > lastScrollTop) {
+                        // Bajando
+                        navbar.classList.add("nav-hidden");
+                    } else {
+                        // Subiendo
+                        navbar.classList.remove("nav-hidden");
+                    }
+                } else {
+                    // Siempre visible si estamos arriba
+                    navbar.classList.remove("nav-hidden");
+                }
+
+                lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+            };
+        });
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,1330 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  scroll-behavior: smooth;
+}
+
+
+.bloque1 {
+  background: #67281bba;
+  width: 100%;
+  min-height: auto;
+  /* Importante: deja que el contenido defina el alto */
+  padding: 30px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-stack {
+  display: flex;
+  flex-direction: column;
+  /* Forza el logo arriba y texto abajo */
+  align-items: center;
+  /* Centra todo horizontalmente */
+  text-align: center;
+  /* Centra el texto */
+  gap: 20px;
+  /* Espacio entre logo y texto */
+  width: 100%;
+  max-width: 900px;
+}
+
+.logo-unlp {
+  height: 120px;
+  /* Tamaño del logo */
+  width: auto;
+  filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.2));
+}
+
+.info-container {
+  color: white;
+  width: 100%;
+}
+
+.universidad {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.facultades {
+  font-size: 1rem;
+  margin: 5px 0;
+  opacity: 0.9;
+}
+
+.diplomatura {
+  font-size: 0.9rem;
+  font-style: italic;
+  margin-bottom: 15px;
+}
+
+.separador-corto {
+  width: 60px;
+  height: 3px;
+  background-color: rgba(255, 255, 255, 0.4);
+  margin: 15px auto;
+  /* Centra el separador */
+}
+
+.autores {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* --- AJUSTE PARA PANTALLAS PEQUEÑAS --- */
+@media (max-width: 600px) {
+  .universidad {
+    font-size: 1.2rem;
+  }
+
+  .facultades,
+  .autores {
+    font-size: 0.85rem;
+  }
+
+  .logo-unlp {
+    height: 90px;
+  }
+}
+
+/*25 febrero*/
+.nav-container {
+  display: flex;
+  flex-direction: row;
+  /* Logo al lado del texto */
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  gap: 30px;
+}
+
+.logo-unlp {
+  height: 100px;
+  /* Ajusta según tu imagen */
+  width: auto;
+}
+
+.info-institucional {
+  color: rgb(14, 13, 13);
+  text-align: left;
+  flex: 1;
+  /* Toma el espacio restante */
+}
+
+.universidad {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.facultades {
+  font-size: 0.95rem;
+  margin: 5px 0;
+}
+
+.diplomatura {
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.autores {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #070707;
+}
+
+.separador {
+  border: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  margin: 10px 0;
+}
+
+/* --- RESPONSIVE: Cuando la pantalla es chica (Celulares) --- */
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    /* Logo arriba, texto abajo */
+    text-align: center;
+  }
+
+  .info-institucional {
+    text-align: center;
+  }
+
+  .universidad {
+    font-size: 1.1rem;
+  }
+
+  .facultades,
+  .diplomatura,
+  .autores {
+    font-size: 0.8rem;
+  }
+}
+
+
+
+
+
+header {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.exo-1 {
+  text-align: center;
+  display: inline-block;
+}
+
+.exo-1 img {
+  position: absolute;
+  width: 180px;
+  height: auto;
+  vertical-align: middle;
+}
+
+
+nav {
+  display: flex;
+  flex-direction: row;
+  z-index: 8;
+  text-align: center;
+  height: auto;
+  position: relative;
+  width: 100vw;
+  justify-content: flex-start;
+
+}
+
+/*para que desaparezca el nav al scrolear*/
+
+/* --- SUSTITUIR O PEGAR AL FINAL --- */
+
+#navbar {
+  display: flex;
+  flex-direction: row;
+  background-color: none;
+  width: 100%;
+  z-index: 9999 !important; /* Prioridad máxima sobre otros elementos */
+  position: sticky; 
+  top: 0;
+  left: 0;
+  transition: transform 0.4s ease-in-out;
+  margin: 0;
+}
+
+/* Esta clase es la que el JS activa/desactiva */
+.nav-hidden {
+  transform: translateY(-100%);
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  position: relative !important; /* IMPORTANTE: Deja de ser fixed para seguir al padre */
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 100%;
+  justify-content: flex-start;
+}
+
+/* Estilo para los links para que se vean bien en la barra café */
+.menu li a {
+  display: block;
+  padding: 15px 20px;
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+}
+/*aqui termina la prueba*/
+
+main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+/* 1. Contenedor padre del submenú */
+.sbm {
+  position: relative;
+  display: inline-block;
+}
+
+/* 2. El submenú (Oculto por defecto y con estilo visual) */
+.submenu {
+  display: none !important;
+  /* Forzamos el ocultamiento inicial */
+  position: absolute;
+  top: 100%;
+  /* Justo debajo de 'Atractivos' */
+  left: 0;
+  background-color: #d19d50 !important;
+  /* Color igual al menú principal */
+  min-width: 180px;
+  list-style: none;
+  padding: 5px 0;
+  margin: 0;
+  z-index: 9999;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 0 0 5px 5px;
+}
+
+/* 3. REGLA DE ACTIVACIÓN (La que hace la magia) */
+/* Eliminamos la palabra '.menu' del medio que causaba el error */
+.sbm:hover>.submenu {
+  display: flex !important;
+  flex-direction: column;
+}
+
+/* 4. Estilo para los links dentro del submenú */
+.submenu .menu-link a {
+  color: #691d04 !important;
+  padding: 8px 15px !important;
+  width: 100% !important;
+  display: block !important;
+  background-color: transparent !important;
+  font-size: 11px;
+  opacity: 1 !important;
+}
+
+.submenu .menu-link a:hover {
+  background-color: #f5f5f5 !important;
+  color: #b05b06 !important;
+}
+
+
+
+
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+}
+
+.menu ul {
+  display: none;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+  position: absolute;
+}
+
+.sbm:hover .menu ul {
+  display: flex;
+}
+
+/**/
+.menu li {
+  display: inline-block;
+  margin: 0 10px;
+  box-sizing: border-box;
+}
+
+.menu a {
+  font-family: sans-serif;
+  padding: 10px;
+  margin: 3px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #693d04;
+  font-size: 10px;
+  font-weight: bold;
+  background-color: #c8b7a3;
+  opacity: 0.6;
+  display: block;
+  width: 35%;
+  min-width: 110px;
+}
+
+.menu a {
+  width: 35%;
+}
+
+.menu:hover a {
+  background-color: #f6d4a7;
+  width: 55%;
+  color: black;
+}
+
+.menu a:hover {
+  background-color: #f5f5f5;
+  width: 35%;
+  color: #b05206;
+}
+
+.titulo {
+
+  display: flex;
+  padding: 5vh;
+  text-align: center;
+  height: 100px;
+  width: 100vw;
+  justify-content: space-between;
+}
+
+.titulo h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-large;
+}
+
+.slides {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  min-height: 200px;
+}
+
+.material-symbols-outlined:hover .menu {
+  visibility: visible;
+}
+
+.hamburger {
+  visibility: hidden;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  filter: drop-shadow(0px 0px 12px #ffffff)
+}
+
+h1 {
+  font-size: 2em;
+  color: #333333;
+  text-align: center;
+}
+
+#mapa {
+  position: relative;
+  background-color: #f8f9fa;
+  /* Un gris más sutil y limpio */
+  width: 100%;
+  padding: 20px 0;
+  /* Espaciado para que no pegue con lo de arriba */
+  display: flex;
+  justify-content: center;
+}
+
+/* Contenedor interno para controlar la proporción */
+#map {
+  width: 90%;
+  max-width: 1100px;
+  height: 450px;
+  /* Altura fija para desktop */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: 1px solid #ddd;
+}
+
+/* Instrucciones directas para el iframe */
+#map iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* --- RESPONSIVE: Ajuste para celulares --- */
+@media (max-width: 768px) {
+  #map {
+    height: 300px;
+    /* Reducimos la altura en pantallas chicas */
+    width: 95%;
+  }
+}
+
+
+#Contenidoconsulta {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  width: 100%;
+  background-color: lightgray;
+}
+
+#btn_c {
+  position: absolute;
+  left: 50%;
+  top: 80%;
+  transform: translate(-50%, -50%);
+  background-color: darkgrey;
+
+}
+
+
+@media (min-width: 1024px) {
+  .exo-1 {
+    font-size: 1.5em;
+  }
+}
+
+@media (max-width: 600px) {
+  body nav {
+    justify-content: flex-start;
+  }
+
+  .hamburger {
+    visibility: visible;
+  }
+
+  .slides {
+    top: 0px;
+  }
+
+  .menu {
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 150px;
+    align-items: flex-start;
+    margin-left: 30px;
+    margin-top: 15px;
+  }
+
+  .menu a {
+    padding: auto;
+    font-size: 8px;
+  }
+
+
+}
+
+.boxinicio {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: white;
+  font-size: 6vw;
+  text-align: center;
+  text-shadow: #d27655 2px 2px;
+}
+
+.boxpresentacion {
+  text-transform: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: black;
+  font-size: 2vw;
+  font-weight: bold;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.seccion-binacional {
+  display: flex;
+  flex-direction: row;
+  /* Alinea hijos en fila */
+  align-items: center;
+  /* Centra verticalmente el texto con la imagen */
+  justify-content: space-between;
+  width: 100%;
+  min-height: 450px;
+  background-color: #f4f4f4;
+  /* Un gris suave de fondo */
+  padding: 40px;
+  gap: 30px;
+  /* Espacio entre el texto y la imagen */
+}
+
+/* Caja de texto (Izquierda) */
+.contenido-texto {
+  flex: 1;
+  /* Toma el 50% del espacio */
+  padding: 20px;
+}
+
+.contenido-texto h2 {
+  color: #cf2e15;
+  /* El rojo de tu marca */
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.contenido-texto p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+  text-align: justify;
+}
+
+/* Caja de imagen (Derecha) */
+.contenido-imagen {
+  flex: 1;
+  /* Toma el otro 50% */
+  display: flex;
+  justify-content: center;
+}
+
+.contenido-imagen img {
+  width: 100%;
+  max-width: 600px;
+  /* Evita que crezca demasiado en pantallas gigantes */
+  height: auto;
+  border-radius: 15px;
+  /* Bordes redondeados como en la imagen */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .seccion-binacional {
+    flex-direction: column;
+    padding: 20px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+#map {
+  height: 400px;
+  width: 100%;
+  background-color: #eee;
+}
+
+body,
+html {
+  display: flex;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  overflow-y: auto;
+  flex-direction: column;
+}
+
+#presentacion {
+  position: relative;
+}
+
+.slides section {
+  width: 100%;
+  height: auto;
+}
+
+#Contenido1 {
+  position: relative;
+  top: 100px;
+}
+
+#contenido2 {
+  position: relative;
+  top: 100px;
+}
+
+#contenidoconsulta {
+  position: relative;
+  top: 100px;
+  height: 100%;
+  background-color: lightgray;
+}
+
+#contacto {
+  position: relative;
+  top: 100px;
+}
+
+#pie {
+  position: relative;
+  top: 100px;
+
+}
+
+#pieconsulta {
+  position: relative;
+}
+
+section>span {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 5vw;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+}
+
+body.slider__body {
+  margin: 0;
+  padding: 0;
+}
+
+.slider__container {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transition: -webkit-transform 500ms ease-in-out;
+  transition: -webkit-transform 500ms ease-in-out;
+  -o-transition: transform 500ms ease-in-out;
+  transition: transform 500ms ease-in-out;
+}
+
+.slider__page {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.slider__indicators {
+  position: fixed;
+  left: 18px;
+  top: 50%;
+  z-index: 2;
+  margin: 0;
+  padding: 0;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.slider__indicator {
+  width: 10px;
+  height: 10px;
+  margin: 10px 0;
+  border-radius: 100px;
+  background-color: #fff;
+  cursor: default;
+}
+
+.slider__indicator--active {
+  opacity: 0.3;
+}
+
+#pie footer {
+  background-color: #67281bba;
+  ;
+  /* Tu color original */
+  color: #ffffff;
+  padding: 40px 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-container {
+  max-width: 1000px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-institucion {
+  text-align: center;
+}
+
+.f-univ {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.f-facultades {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.f-diplomatura {
+  font-size: 0.85rem;
+  font-style: italic;
+  margin-top: 5px;
+}
+
+.f-separador {
+  width: 50%;
+  border: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-autores {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  flex-wrap: wrap;
+  /* Permite que bajen si no hay espacio */
+  gap: 20px;
+}
+
+.autor {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.autor .nombre {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.autor .documento {
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+.footer-copy {
+  margin-top: 20px;
+  font-size: 0.75rem;
+  opacity: 0.6;
+}
+
+/* --- AJUSTE RESPONSIVE --- */
+@media (max-width: 600px) {
+  #pie footer {
+    padding: 30px 15px;
+  }
+
+  .footer-autores {
+    flex-direction: column;
+    /* En celular, un autor arriba del otro */
+    gap: 15px;
+  }
+
+  .f-univ {
+    font-size: 1rem;
+  }
+
+  .f-facultades,
+  .f-diplomatura {
+    font-size: 0.8rem;
+  }
+}
+
+.sections {
+  display: flex;
+  font-family: sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
+.slide {
+  flex: none;
+  width: 100%;
+  height: 100vh;
+  scroll-snap-align: start;
+  transform: none;
+}
+
+.grupos {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#alert-container {
+  display: flex;
+  position: fixed;
+  top: 25vh;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  opacity: 0.8;
+}
+
+#alert-container img {
+  width: 50%;
+  height: 50%;
+}
+
+.alert-info {
+  max-width: 30vw;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+#formulario {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  text-align: center;
+  background-color: lightgray;
+  height: -webkit-fill-available;
+}
+
+#formulario input {
+  background-color: lightgray;
+}
+
+.fecha {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+#consultas {
+  position: relative;
+  top: 100px;
+}
+
+h8 {
+  font-size: 0.9em;
+  text-shadow: 0 0 .2rem var(--second-text-color);
+}
+
+.contenedor-consultas {
+  overflow-y: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5vh;
+  background-color: white;
+
+  .carta {
+    width: 100%;
+    /* O un ancho fijo como 800px */
+    max-width: 100%;
+    height: 100%;
+    /* Ajusta la altura según necesites */
+    margin: 20px auto;
+  }
+
+  .carta .frente {
+    display: flex;
+    /* La magia: pone imagen y texto en fila */
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    transform: none !important;
+    /* Desactivamos el giro si ya no lo usas */
+  }
+
+  /* Contenedor de la imagen (50% del ancho) */
+  .carta-imagen {
+    flex: 1;
+    height: 100%;
+  }
+
+  .carta-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Evita que la foto se deforme */
+  }
+
+  /* Contenedor de la información (50% del ancho) */
+  .carta-info {
+    flex: 1;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #f9f9f9;
+  }
+
+  .carta-info h8 {
+    position: static;
+    /* Quitamos el posicionamiento absoluto que tenías */
+    color: #691d04;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    background: none;
+    text-align: left;
+  }
+
+  .carta-info p {
+    font-size: 0.95rem;
+    color: #333;
+    line-height: 1.6;
+  }
+
+
+
+
+
+
+
+  /*
+.carta{
+  position: relative;
+  width: 50rem;
+  height: 30rem;
+  margin: .6rem .6rem;
+} 
+.carta .cara {
+  position:absolute;
+  width: 100%;
+  height: 80%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: .5s;
+}
+.carta .frente{
+  transform: perspective(600px) rotateY(0deg);
+  box-shadow: 0 5px 10px #000;
+}
+.carta .frente img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.carta .frente h8{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 5rem;
+  line-height: 1.5rem;
+  color: white;
+  background-color: rgba(0, 0, 0,.4);
+  text-align: center;
+}
+/*.carta .dorso {
+  transform: perspective(600px) rotateY(180deg);
+  background-color: rgb(3, 35, 54);
+  padding: 15px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  box-shadow: 0 5px 10px #000;
+}
+.carta .dorso .link {
+  font-size: 0.9em;
+  border-top: solid 1px #f3f3f3;
+  height: 50px;
+  line-height: 50px;
+}
+.carta .dorso .link a {
+  color: #f3f3f3;
+}
+.carta .dorso h9 {
+  font-size: 0.7em;
+  margin-top: 10px;
+  letter-spacing: 2px;
+  color: var(--bg-color);
+}
+.carta .dorso h9 i {
+  color: var(--bg-color);
+}
+.carta .dorso h9 {
+  letter-spacing: 1px;
+  color: var(--bg-color);
+}
+.carta:hover .frente{
+  transform: perspective(600px) rotateY(180deg);
+}
+
+.carta:hover .dorso{
+  transform: perspective(600px) rotateY(360deg);
+}
+.pdf{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  overflow-y: auto;
+  flex-direction: column;
+}*/
+  .menu-link {
+    display: flex;
+    cursor: pointer;
+    color: rgb(128, 39, 4);
+  }
+
+  /*
+.submenu {
+  display: none;
+  position: absolute;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+*/
+  /* 1. Contenedor padre del submenú */
+  .sbm {
+    position: relative;
+    display: inline-block;
+  }
+
+  /* 2. El submenú (Oculto por defecto y con estilo visual) */
+  .submenu {
+    display: none;
+    /* Forzamos el ocultamiento inicial */
+    position: absolute;
+    top: 100%;
+    /* Justo debajo de 'Atractivos' */
+    left: 0;
+    background-color: #c8baa3;
+    /* Color igual al menú principal */
+    min-width: 180px;
+    list-style: none;
+    padding: 5px 0;
+    margin: 0;
+    z-index: 9999;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 0 0 5px 5px;
+  }
+
+  /* 3. REGLA DE ACTIVACIÓN (La que hace la magia) */
+  /* Eliminamos la palabra '.menu' del medio que causaba el error */
+  .sbm:hover>.submenu {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* 4. Estilo para los links dentro del submenú */
+  .submenu .menu-link a {
+    color: #692404;
+    padding: 8px 15px;
+    width: 100%;
+    display: block;
+    background-color: transparent;
+    font-size: 11px;
+    opacity: 1;
+  }
+
+  .submenu .menu-link a:hover {
+    background-color: #f5f5f5;
+    color: #b03906;
+  }
+
+
+
+  /*
+.sbm:hover .submenu {
+  display: flex;
+  flex-direction: column; 
+  background-color: #a3c8c6; 
+  position: absolute; 
+  z-index: 999;
+  
+}
+*/
+
+  #tablaresul {
+    background-color: #f3951c;
+
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 60%;
+    /* Aquí cambiamos el ancho al 60% */
+    margin: 0 auto;
+    /* Centra la tabla horizontalmente */
+  }
+
+  th,
+  td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  th {
+    background-color: #769a9d;
+    color: white;
+
+  }
+
+  .logout-btn {
+    width: 1em;
+    height: 1em;
+    background-color: rgb(112, 107, 107);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .logout-btn:hover {
+    background-color: darkred;
+  }
+
+  .btnheader {
+    display: inline-block;
+    padding: 0.5em 1em;
+    font-size: 0.8em;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    background-color: #a0a0a1;
+    color: #ffffff;
+    border: none;
+    border-radius: 0.2em;
+    cursor: pointer;
+  }
+
+  .btnheader a {
+    color: #ffffff;
+  }
+
+  .btnheader:hover {
+    background-color: darkgray;
+  }
+
+  #formulariocontacto {
+    display: flex;
+    flex-direction: column;
+    height: 60%;
+    max-width: 500px;
+    /* Establece un ancho máximo para el formulario */
+    margin: 0 auto;
+    /* Centra el formulario horizontalmente */
+    padding: 20px;
+    /* Agrega espacio entre el contenido y el borde */
+    background-color: lightgray;
+    /* Color de fondo gris claro */
+    border: 1px solid #f01818;
+    /* Agrega un borde rojo */
+    border-radius: 10px;
+    /* Agrega un borde redondeado */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* Agrega una sombra */
+  }
+
+  #formulariocontacto input {
+    background-color: #ffffff;
+    /* Color de fondo blanco */
+    border: 1px solid #cccccc;
+    /* Borde gris claro */
+    padding: 10px;
+    /* Espacio entre el texto y el borde */
+    margin-bottom: 20px;
+    /* Espacio entre los inputs */
+    border-radius: 5px;
+    /* Agrega un borde redondeado */
+  }
+
+  #formulariocontacto textarea {
+    background-color: #ffffff;
+    /* Color de fondo blanco */
+    border: 1px solid #cccccc;
+    /* Borde gris claro */
+    padding: 10px;
+    /* Espacio entre el texto y el borde */
+    margin-bottom: 20px;
+    /* Espacio entre los inputs */
+    border-radius: 5px;
+    /* Agrega un borde redondeado */
+    resize: none;
+    /* Deshabilita el redimensionamiento */
+  }
+
+  #formulariocontacto button[type="submit"] {
+    color: #ffffff;
+    /* Color de texto blanco */
+    padding: 10px 20px;
+    /* Espacio entre el texto y el borde */
+    border: none;
+    /* Elimina el borde */
+    border-radius: 5px;
+    /* Agrega un borde redondeado */
+    cursor: pointer;
+    /* Cambia el cursor a una mano */
+  }
+
+  #formulariocontacto button[type="submit"]:hover {
+    background-color: #e60000;
+    /* Color de fondo rojo oscuro */
+  }
+
+  #btn_c {
+    margin-top: 10px;
+  }
+
+  .formulariousuario {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    max-width: 80%;
+    /* Establece un ancho máximo para el formulario */
+    margin: 0 auto;
+    /* Centra el formulario horizontalmente */
+    padding: 20px;
+    /* Agrega espacio entre el contenido y el borde */
+    background-color: lightgray;
+    /* Color de fondo gris claro */
+    border: 1px solid #130303;
+    /* Agrega un borde rojo */
+    border-radius: 10px;
+    /* Agrega un borde redondeado */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* Agrega una sombra */
+  }
+
+  .formulariousuario input {
+    background-color: #ffffff;
+    /* Color de fondo blanco */
+    border: 1px solid #3e3131;
+    /* Borde gris claro */
+    padding: 5px;
+    /* Espacio entre el texto y el borde */
+    margin-bottom: 20px;
+    /* Espacio entre los inputs */
+    border-radius: 5px;
+    /* Agrega un borde redondeado */
+  }
+
+  .formulariousuario button[type="submit"] {
+    background-color: #f01818;
+    /* Color de fondo rojo */
+    color: #ffffff;
+    /* Color de texto blanco */
+    padding: 10px 20px;
+    /* Espacio entre el texto y el borde */
+    border: none;
+    /* Elimina el borde */
+    border-radius: 10px;
+    /* Agrega un borde redondeado */
+    cursor: pointer;
+    /* Cambia el cursor a una mano */
+  }
