@@ -13,13 +13,20 @@
   background: #67281bba;
   width: 100%;
   min-height: auto;
+
   /* Importante: deja que el contenido defina el alto */
   padding: 30px 15px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
+.logo-container {
+    display: flex;
+    width: 100%;
+    margin: 15px;
+    height: auto;
+    /* justify-content: space-between; */
+}
 .header-stack {
   display: flex;
   flex-direction: column;
@@ -35,10 +42,15 @@
 }
 
 .logo-unlp {
-  height: 120px;
-  /* Tamaño del logo */
-  width: auto;
+  /* En lugar de una altura fija, usamos un ancho relativo */
+  width: 100%; 
+  max-width: 180px; /* El tamaño máximo que quieres que tenga en desktop */
+  height: auto;     /* Mantiene la proporción de la imagen siempre */
+  
+  display: block;
+  margin: 0 auto;
   filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.2));
+  transition: max-width 0.3s ease; /* Suaviza el cambio de tamaño */
 }
 
 .info-container {
@@ -106,9 +118,11 @@
 }
 
 .logo-unlp {
-  height: 100px;
+  max-width: min-content;
+  height: auto !important;
   /* Ajusta según tu imagen */
-  width: auto;
+  width: 100%;
+
 }
 
 .info-institucional {
@@ -493,8 +507,38 @@ h1 {
 }
   .hamburger {
     visibility: visible;
+    cursor: pointer; /* Hace que aparezca la "manito" al pasar el mouse */
+    z-index: 10001;
+    display: flex;
+  }
+  .slides {
+    top: 0px;
   }
 
+  .menu {
+    display: none; /* Cambiado de visibility: hidden para que no ocupe espacio */
+    flex-direction: column;
+    background-color: #c8b7a3; /* Color de fondo para que no sea transparente */
+    width: 100%;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+  }
+
+  /* Esta es la clase que el JavaScript activará */
+  .menu.active {
+    display: flex;
+  }
+
+  .menu a {
+    width: 90%; /* Ajuste para que los links ocupen el ancho del celular */
+    font-size: 14px; /* Un poco más grande para facilitar el toque táctil */
+    margin: 5px 0;
+  }
+}
+/*
   .slides {
     top: 0px;
   }
@@ -514,7 +558,7 @@ h1 {
     padding: auto;
     font-size: 8px;
   }
-
+*/
 
 }
 
@@ -820,7 +864,12 @@ body.slider__body {
   #pie footer {
     padding: 30px 15px;
   }
-
+  .hamburger {
+    visibility: visible;
+    cursor: pointer; /* Hace que aparezca la "manito" al pasar el mouse */
+    z-index: 10001;
+    display: flex;
+  }
   .footer-autores {
     flex-direction: column;
     /* En celular, un autor arriba del otro */

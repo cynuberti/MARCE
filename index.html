@@ -38,11 +38,11 @@
     </header>
 
     <nav id="navbar">
-        <a class="hamburger">
+        <a class="hamburger" id="hamburger">
             <span class="material-symbols-outlined">
                 menu
             </span>
-         <!---  <img src="/static/img/menu_FILL0_wght400_GRAD0_opsz24.svg" alt="Menu" />-->
+            <!---  <img src="/static/img/menu_FILL0_wght400_GRAD0_opsz24.svg" alt="Menu" />-->
         </a>
 
         <ul class="menu">
@@ -505,6 +505,37 @@
 
                 lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
             };
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // --- NUEVA LÓGICA PARA EL MENÚ ---
+            const hamburger = document.querySelector(".hamburger");
+            const menu = document.querySelector(".menu");
+
+            hamburger.addEventListener("click", function (e) {
+                e.preventDefault();
+                // Toggle de la clase 'show' que definimos en el CSS
+                menu.classList.toggle("show");
+
+                if (menu.style.display === "flex") {
+        menu.style.display = "none";
+    } else {
+        menu.style.display = "flex";
+    }
+            });
+
+            // Opcional: cerrar el menú si se hace clic en una opción
+            document.querySelectorAll(".menu a").forEach(link => {
+                link.addEventListener("click", () => {
+                    menu.classList.remove("show");
+                });
+            });
+
+            // --- TU LÓGICA DE SCROLL (Mantenla como está) ---
+            let lastScrollTop = 0;
+            const navbar = document.getElementById("navbar");
+            // ... resto de tu código de scroll ...
         });
     </script>
 
