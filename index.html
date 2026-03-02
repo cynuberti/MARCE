@@ -526,9 +526,15 @@ document.addEventListener("DOMContentLoaded", function () {
             const esPadreSubmenu = this.parentElement.classList.contains("sbm");
 
             if (esPadreSubmenu) {
-                // En móvil, al tocar "Elementos Geológicos" mostramos/ocultamos la lista
-                e.preventDefault();
-                this.parentElement.classList.toggle("active");
+// 1. Llevamos al usuario al principio de la página
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+
+            // 2. Opcional: Si quieres que en móvil también despliegue el menú 
+            // al mismo tiempo que sube, puedes añadir una clase 'active'
+            this.parentElement.classList.toggle("active");
             } else {
                 // Si es un link final (ej. Maule o Autores)
                 if (targetId === "#footer") {
