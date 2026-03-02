@@ -56,9 +56,9 @@
                     <li class="menu-link" data-id="brujas"><a href="#brujas">Caverna de las brujas</a>
                     <li>
                     <li class="menu-link" data-id="cajongrande" .><a href="#cajongrande">Termas de Cajón grande</a></li>
-                    <li class="menu-link" data-id="maulle"><a href="#maule">Laguna del Maulle</a></li>
+                    <li class="menu-link" data-id="maule"><a href="#maule">Laguna del Maule</a></li>
                     <li class="menu-link" data-id="diablo"><a href="#diablo">Muela del diablo</a></li>
-                    <li class="menu-link" data-id="monjesblancos"><a href="#monje">Monjes blancos</a></li>
+                    <li class="menu-link" data-id="monjes"><a href="#monje">Monjes blancos</a></li>
                     <li class="menu-link" data-id="viejo"><a href="#viejo">Invernada del viejo</a></li>
                     <li class="menu-link" data-id="mallines"><a href="#mallines">Los Mallines colgados</a></li>
                     <li class="menu-link" data-id="peteroa"><a href="#peteroa">Planchón Peteroa</a></li>
@@ -508,13 +508,13 @@
         });
     </script>
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
     const hamburger = document.getElementById("hamburger");
     const menu = document.querySelector(".menu");
 
-    // Abrir/Cerrar menú principal
     hamburger.addEventListener("click", function (e) {
         e.preventDefault();
+        // Usamos solo toggle de clase, no estilos directos
         menu.classList.toggle("show");
     });
 
@@ -522,20 +522,21 @@
 
     menuLinks.forEach(link => {
         link.addEventListener("click", function(e) {
-            // 1. ¿Es el botón "Elementos Geológicos"? (el que tiene la clase sbm)
             const esPadreSubmenu = this.parentElement.classList.contains("sbm");
 
-            if (esPadreSubmenu) {
-                // No cerramos, dejamos que el usuario vea la lista de geositios
-                console.log("Navegando en submenú...");
-            } else {
-                // 2. Es un menú principal (Pasos, Mapa) o un Geositio final (Caverna)
-                // Cerramos el menú para "liberar" la pantalla y que el href funcione
+            if (!esPadreSubmenu) {
+                // En móvil real, cerramos con un pequeño delay 
+                // para que el navegador registre el clic en el link
                 setTimeout(() => {
                     menu.classList.remove("show");
-                    // Forzamos también el display por si acaso
-                    menu.style.display = "none";
-                }, 150); 
+                    if (this.getAttribute("href") === "#autores") {
+
+            window.scrollTo({
+                top: document.body.scrollHeight,
+                behavior: 'smooth'
+            });
+        }
+                }, 200); 
             }
         });
     });
