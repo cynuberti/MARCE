@@ -513,15 +513,20 @@ h1 {
   }
 
 .menu {
-    display: none; /* Se activa con la clase .show desde el JS */
+    display: none;
     flex-direction: column;
     position: absolute;
     top: 60px;
     left: 0;
-    width: 100%; /* El contenedor ocupa todo el ancho */
-    background-color: #c8b7a3; 
+    width: 100%;
+    background-color: #c8b7a3;
     z-index: 10000;
-    padding: 10px 0;
+    
+    /* SOLUCIÓN AL RECORTE: */
+    max-height: 75vh;    /* Limitamos el alto al 75% de la pantalla del celular */
+    overflow-y: auto;   /* Si el contenido es más largo, permite scroll interno */
+    padding-bottom: 20px; 
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.3);
   }
 
   .menu.show {
@@ -542,6 +547,7 @@ h1 {
     opacity: 0.9;       /* Un poco más opaco para que se lea bien en móvil */
     display: block;
     width: 90%;         /* CAMBIO CLAVE: Casi todo el ancho para que sea fácil tocarlo */
+    min-width: 200px;
     transition: all 0.3s ease;
   }
 
@@ -558,10 +564,11 @@ h1 {
     background-color: #d8c7b3; /* Un tono diferente para notar jerarquía */
     width: 85%;                /* Un poco más angosto para notar la sangría */
     font-size: 13px;
+    margin-left: 10% !important;
   }
 }
 
-/* FUERA DEL MEDIA QUERY: El ajuste de salto */
+
 /* Esto soluciona que el 'href' no tape el contenido */
 section[id] {
     scroll-margin-top: 90px; 

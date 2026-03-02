@@ -525,36 +525,29 @@
                 }
             });
             const menuLinks = document.querySelectorAll(".menu a");
-   /*         // Opcional: cerrar el menú si se hace clic en una opción
-            menuLinks.forEach(link => {
-                link.addEventListener("click", () => {
-                    menu.classList.remove("show");
-                    menu.style.display = "none";
-                });
-            });
-*/
-            menuLinks.forEach(link => {
-        link.addEventListener("click", function (e) {
-            // Buscamos si el enlace clickeado está dentro de un <li> con clase 'sbm'
-            // pero NO es uno de los links finales (menu-link)
-            const parentLi = this.parentElement;
-            const esPadreSubmenu = parentLi.classList.contains("sbm");
 
-            if (esPadreSubmenu) {
-                // Si clickeo "Elementos Geológicos", no cierro el menú.
-                // Solo permito que el CSS o el href interno actúe.
-                console.log("Desplegando submenú...");
-            } else {
-                // Si clickeo un geositio (Caverna, Termas, etc.) 
-                // o cualquier otro link simple (Pasos, Autores), cierro el menú.
-               setTimeout(() => {
+menuLinks.forEach(link => {
+    link.addEventListener("click", function(e) {
+        // 1. Detectamos si el link es el PADRE del submenú (el que dice "Elementos Geológicos")
+        const esPadreConSubmenu = this.parentElement.classList.contains("sbm");
+        
+        // 2. Detectamos si el link es un hijo de un submenú (un geositio)
+        const esHijoDeSubmenu = this.closest(".submenu");
 
+        if (esPadreConSubmenu) {
+            // Caso A: Es el menú "Elementos Geológicos"
+            // NO cerramos el menú, solo dejamos que el CSS o el submenú actúe
+            console.log("Navegando en submenú...");
+        } else {
+            // Caso B: Es un menú principal (Pasos, Mapa, Autores) O un geositio final
+            // Cerramos el menú inmediatamente para que el usuario vea el destino
+            setTimeout(() => {
                 menu.classList.remove("show");
                 menu.style.display = "none";
-                }, 150);
-            }
-        });
+            }, 150);
+        }
     });
+});
 
 
 
