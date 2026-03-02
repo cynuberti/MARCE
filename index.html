@@ -512,9 +512,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const hamburger = document.getElementById("hamburger");
     const menu = document.querySelector(".menu");
 
+    // Abrir/Cerrar menú principal
     hamburger.addEventListener("click", function (e) {
         e.preventDefault();
-        // Usamos solo toggle de clase, no estilos directos
         menu.classList.toggle("show");
     });
 
@@ -522,25 +522,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
     menuLinks.forEach(link => {
         link.addEventListener("click", function(e) {
+            const targetId = this.getAttribute("href");
             const esPadreSubmenu = this.parentElement.classList.contains("sbm");
 
-            if (!esPadreSubmenu) {
-                // En móvil real, cerramos con un pequeño delay 
-                // para que el navegador registre el clic en el link
-                if (this.getAttribute("href") === "#autores") {
-        setTimeout(() => {
-            window.scrollTo({
-                top: document.body.scrollHeight,
-                behavior: 'smooth'
-            });
-        }, 200);
-    } else {
-                
+            if (esPadreSubmenu) {
+                // En móvil, al tocar "Elementos Geológicos" mostramos/ocultamos la lista
+                e.preventDefault();
+                this.parentElement.classList.toggle("active");
+            } else {
+                // Si es un link final (ej. Maule o Autores)
+                if (targetId === "#footer") {
+                    e.preventDefault();
+                    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+                }
+                // Cerramos el menú después de clickear
                 setTimeout(() => {
                     menu.classList.remove("show");
-                   
-                }, 200); 
-            }}
+                }, 200);
+            }
         });
     });
 });
