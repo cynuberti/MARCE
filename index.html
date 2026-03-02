@@ -519,18 +519,39 @@
                 menu.classList.toggle("show");
 
                 if (menu.style.display === "flex") {
-        menu.style.display = "none";
-    } else {
-        menu.style.display = "flex";
-    }
+                    menu.style.display = "none";
+                } else {
+                    menu.style.display = "flex";
+                }
             });
+            const menuLinks = document.querySelectorAll(".menu a");
 
-            // Opcional: cerrar el menú si se hace clic en una opción
-            document.querySelectorAll(".menu a").forEach(link => {
-                link.addEventListener("click", () => {
-                    menu.classList.remove("show");
-                });
-            });
+            menuLinks.forEach(link => {
+        link.addEventListener("click", function (e) {
+            // Buscamos si el enlace clickeado está dentro de un <li> con clase 'sbm'
+            // pero NO es uno de los links finales (menu-link)
+            const parentLi = this.parentElement;
+            const esPadreSubmenu = parentLi.classList.contains("sbm");
+
+            if (esPadreSubmenu) {
+                // Si clickeo "Elementos Geológicos", no cierro el menú.
+                // Solo permito que el CSS o el href interno actúe.
+                console.log("Desplegando submenú...");
+            } else {
+                // Si clickeo un geositio (Caverna, Termas, etc.) 
+                // o cualquier otro link simple (Pasos, Autores), cierro el menú.
+                menu.classList.remove("show");
+                menu.style.display = "none";
+            }
+        });
+    });
+
+
+
+
+
+
+
 
             // --- TU LÓGICA DE SCROLL (Mantenla como está) ---
             let lastScrollTop = 0;
