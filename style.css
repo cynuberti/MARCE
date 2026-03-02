@@ -461,6 +461,10 @@ h1 {
   background-color: lightgray;
 }
 
+.contenedor-consultas  .carta .frente {
+ flex-direction: column;
+}
+
 #btn_c {
   position: absolute;
   left: 50%;
@@ -475,13 +479,18 @@ h1 {
   .exo-1 {
     font-size: 1.5em;
   }
+  .contenedor-consultas  .carta .frente {
+ flex-direction: row;
+}
 }
 
 @media (max-width: 600px) {
   body nav {
     justify-content: flex-start;
   }
-
+.contenedor-consultas  .carta .frente {
+  flex-direction: column;
+}
   .hamburger {
     visibility: visible;
   }
@@ -531,6 +540,7 @@ h1 {
   background-color: rgba(255, 255, 255, 0.6);
   padding: 20px;
   border-radius: 10px;
+  text-align: justify;
 }
 
 .seccion-binacional {
@@ -926,7 +936,7 @@ h8 {
   .carta .frente {
     display: flex;
     /* La magia: pone imagen y texto en fila */
-    flex-direction: row;
+   /* flex-direction: row;*/
     width: 100%;
     height: 100%;
     background-color: #fff;
@@ -974,6 +984,8 @@ h8 {
     font-size: 0.95rem;
     color: #333;
     line-height: 1.6;
+    text-align: justify;
+
   }
 
 
