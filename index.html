@@ -509,58 +509,37 @@
     </script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            // --- NUEVA LÓGICA PARA EL MENÚ ---
-            const hamburger = document.querySelector(".hamburger");
-            const menu = document.querySelector(".menu");
+    const hamburger = document.getElementById("hamburger");
+    const menu = document.querySelector(".menu");
 
-            hamburger.addEventListener("click", function (e) {
-                e.preventDefault();
-                // Toggle de la clase 'show' que definimos en el CSS
-                menu.classList.toggle("show");
+    // Abrir/Cerrar menú principal
+    hamburger.addEventListener("click", function (e) {
+        e.preventDefault();
+        menu.classList.toggle("show");
+    });
 
-                if (menu.style.display === "flex") {
+    const menuLinks = document.querySelectorAll(".menu a");
+
+    menuLinks.forEach(link => {
+        link.addEventListener("click", function(e) {
+            // 1. ¿Es el botón "Elementos Geológicos"? (el que tiene la clase sbm)
+            const esPadreSubmenu = this.parentElement.classList.contains("sbm");
+
+            if (esPadreSubmenu) {
+                // No cerramos, dejamos que el usuario vea la lista de geositios
+                console.log("Navegando en submenú...");
+            } else {
+                // 2. Es un menú principal (Pasos, Mapa) o un Geositio final (Caverna)
+                // Cerramos el menú para "liberar" la pantalla y que el href funcione
+                setTimeout(() => {
+                    menu.classList.remove("show");
+                    // Forzamos también el display por si acaso
                     menu.style.display = "none";
-                } else {
-                    menu.style.display = "flex";
-                }
-            });
-            const menuLinks = document.querySelectorAll(".menu a");
-
-menuLinks.forEach(link => {
-    link.addEventListener("click", function(e) {
-        // 1. Detectamos si el link es el PADRE del submenú (el que dice "Elementos Geológicos")
-        const esPadreConSubmenu = this.parentElement.classList.contains("sbm");
-        
-        // 2. Detectamos si el link es un hijo de un submenú (un geositio)
-        const esHijoDeSubmenu = this.closest(".submenu");
-
-        if (esPadreConSubmenu) {
-            // Caso A: Es el menú "Elementos Geológicos"
-            // NO cerramos el menú, solo dejamos que el CSS o el submenú actúe
-            console.log("Navegando en submenú...");
-        } else {
-            // Caso B: Es un menú principal (Pasos, Mapa, Autores) O un geositio final
-            // Cerramos el menú inmediatamente para que el usuario vea el destino
-            setTimeout(() => {
-                menu.classList.remove("show");
-                menu.style.display = "none";
-            }, 150);
-        }
+                }, 150); 
+            }
+        });
     });
 });
-
-
-
-
-
-
-
-
-            // --- TU LÓGICA DE SCROLL (Mantenla como está) ---
-            let lastScrollTop = 0;
-            const navbar = document.getElementById("navbar");
-            // ... resto de tu código de scroll ...
-        });
     </script>
 
 

@@ -523,7 +523,7 @@ h1 {
     z-index: 10000;
     
     /* SOLUCIÓN AL RECORTE: */
-    max-height: 75vh;    /* Limitamos el alto al 75% de la pantalla del celular */
+    max-height: 80vh;    /* Limitamos el alto al 75% de la pantalla del celular */
     overflow-y: auto;   /* Si el contenido es más largo, permite scroll interno */
     padding-bottom: 20px; 
     box-shadow: 0px 5px 15px rgba(0,0,0,0.3);
@@ -534,22 +534,21 @@ h1 {
   }
 
   /* ADECUACIÓN DE LOS LINKS: Mantenemos tu estilo visual */
-  .menu a {
+.menu a {
     font-family: sans-serif;
-    padding: 12px 20px; /* Aumentamos un poco el padding para el dedo */
-    margin: 5px auto;   /* Centramos los botones */
+    padding: 15px !important; /* Más alto para que el dedo no falle */
+    margin: 8px auto !important;
     border-radius: 5px;
     text-decoration: none;
     color: #693d04;
-    font-size: 14px;    /* 10px es muy chico para leer en medicina/ingeniería */
+    font-size: 15px !important; /* 10px es ilegible en un celular real */
     font-weight: bold;
     background-color: #c8b7a3;
-    opacity: 0.9;       /* Un poco más opaco para que se lea bien en móvil */
-    display: block;
-    width: 90%;         /* CAMBIO CLAVE: Casi todo el ancho para que sea fácil tocarlo */
-    min-width: 200px;
-    transition: all 0.3s ease;
-  }
+    display: block !important;
+    width: 90% !important; /* Casi todo el ancho para que sea fácil clickear */
+    text-align: center;
+    opacity: 1 !important; /* Que se vea bien claro */
+  } 
 
   /* Quitamos o adaptamos los hovers de ancho variable en móvil */
   /* En celulares el 'hover' no existe como tal, se activa al tocar */
@@ -571,7 +570,7 @@ h1 {
 
 /* Esto soluciona que el 'href' no tape el contenido */
 section[id] {
-    scroll-margin-top: 90px; 
+    scroll-margin-top: 100px; 
 }
 
   .menu a {
