@@ -527,17 +527,20 @@ document.addEventListener("DOMContentLoaded", function () {
             if (!esPadreSubmenu) {
                 // En móvil real, cerramos con un pequeño delay 
                 // para que el navegador registre el clic en el link
-                setTimeout(() => {
-                    menu.classList.remove("show");
-                    if (this.getAttribute("href") === "#autores") {
-
+                if (this.getAttribute("href") === "#autores") {
+        setTimeout(() => {
             window.scrollTo({
                 top: document.body.scrollHeight,
                 behavior: 'smooth'
             });
-        }
+        }, 200);
+    } else {
+                
+                setTimeout(() => {
+                    menu.classList.remove("show");
+                   
                 }, 200); 
-            }
+            }}
         });
     });
 });
