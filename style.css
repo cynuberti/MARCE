@@ -10,8 +10,8 @@
 }
 
 body, html {
-  display: flex;
-  height: 100%;
+  display: block;
+  height: auto;
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -350,7 +350,7 @@ html {
   height: auto;
 }
 .slides {
-  position: absolute;
+  position: relative;
   left: 0;
   width: 100%;
   min-height: 200px;
@@ -413,6 +413,8 @@ section[id] { scroll-margin-top: 80px; } /* Ajuste para que el nav no tape el t√
 /* --- 5. RESPONSIVE (M√ìVIL) --- */
 .hamburger { display: none; }
 
+
+
 @media (max-width: 768px) {
   .hamburger {
     display: block;
@@ -466,7 +468,7 @@ section[id] { scroll-margin-top: 80px; } /* Ajuste para que el nav no tape el t√
   align-items: center;
   margin-top: 5vh;
   background-color: white;
-
+}
   .carta {
     width: 100%;
     /* O un ancho fijo como 800px */
@@ -581,3 +583,4 @@ section[id] { scroll-margin-top: 80px; } /* Ajuste para que el nav no tape el t√
 /* Espacio final para permitir scroll en los √∫ltimos elementos */
 footer { padding-bottom: 100px; }
 
+}
