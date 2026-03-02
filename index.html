@@ -547,8 +547,11 @@
             } else {
                 // Si clickeo un geositio (Caverna, Termas, etc.) 
                 // o cualquier otro link simple (Pasos, Autores), cierro el menú.
+               setTimeout(() => {
+
                 menu.classList.remove("show");
                 menu.style.display = "none";
+                }, 150);
             }
         });
     });
