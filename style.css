@@ -371,9 +371,6 @@ main {
   min-width: 110px;
 }
 
-.menu a {
-  width: 35%;
-}
 
 .menu:hover a {
   background-color: #f6d4a7;
@@ -515,28 +512,68 @@ h1 {
     top: 0px;
   }
 
-  .menu {
-    display: none; /* Cambiado de visibility: hidden para que no ocupe espacio */
+.menu {
+    display: none; /* Se activa con la clase .show desde el JS */
     flex-direction: column;
-    background-color: #c8b7a3; /* Color de fondo para que no sea transparente */
-    width: 100%;
     position: absolute;
-    top: 50px;
+    top: 60px;
     left: 0;
-    padding: 20px;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+    width: 100%; /* El contenedor ocupa todo el ancho */
+    background-color: #c8b7a3; 
+    z-index: 10000;
+    padding: 10px 0;
   }
 
-  /* Esta es la clase que el JavaScript activará */
-  .menu.active {
-    display: flex;
+  .menu.show {
+    display: flex !important;
   }
+
+  /* ADECUACIÓN DE LOS LINKS: Mantenemos tu estilo visual */
+  .menu a {
+    font-family: sans-serif;
+    padding: 12px 20px; /* Aumentamos un poco el padding para el dedo */
+    margin: 5px auto;   /* Centramos los botones */
+    border-radius: 5px;
+    text-decoration: none;
+    color: #693d04;
+    font-size: 14px;    /* 10px es muy chico para leer en medicina/ingeniería */
+    font-weight: bold;
+    background-color: #c8b7a3;
+    opacity: 0.9;       /* Un poco más opaco para que se lea bien en móvil */
+    display: block;
+    width: 90%;         /* CAMBIO CLAVE: Casi todo el ancho para que sea fácil tocarlo */
+    transition: all 0.3s ease;
+  }
+
+  /* Quitamos o adaptamos los hovers de ancho variable en móvil */
+  /* En celulares el 'hover' no existe como tal, se activa al tocar */
+  .menu a:hover, .menu a:active {
+    background-color: #f5f5f5;
+    width: 90%;        /* Mantenemos el ancho consistente */
+    color: #b05206;
+  }
+
+  /* Estilo para los links del submenú (Geositios) */
+  .submenu .menu-link a {
+    background-color: #d8c7b3; /* Un tono diferente para notar jerarquía */
+    width: 85%;                /* Un poco más angosto para notar la sangría */
+    font-size: 13px;
+  }
+}
+
+/* FUERA DEL MEDIA QUERY: El ajuste de salto */
+/* Esto soluciona que el 'href' no tape el contenido */
+section[id] {
+    scroll-margin-top: 90px; 
+}
 
   .menu a {
     width: 90%; /* Ajuste para que los links ocupen el ancho del celular */
     font-size: 14px; /* Un poco más grande para facilitar el toque táctil */
     margin: 5px 0;
   }
+
+
 }
 /*
   .slides {
@@ -884,8 +921,22 @@ body.slider__body {
   .f-diplomatura {
     font-size: 0.8rem;
   }
+  .menu {
+        display: none; /* Lo mantenemos apagado */
+        flex-direction: column;
+        position: absolute;
+        top: 60px; 
+        left: 0;
+        width: 100%;
+        background-color: #c8b7a3;
+        z-index: 10000; /* Para que flote sobre todo lo demás */
+        max-height: 80vh; /* Para que no se pierda el final si hay muchos links */
+        overflow-y: auto; /* Permite hacer scroll dentro del menú si es largo */
+    }
 }
-
+.menu.show {
+        display: flex !important;
+    }
 .sections {
   display: flex;
   font-family: sans-serif;
