@@ -138,7 +138,7 @@
                                     cual, gracias a la acción y descomposición de las plantas, provee el CO2 necesario
                                     para volverlas más ácidas. Una vez se cuenta con estos dos elementos, solo se
                                     necesita tiempo para ser capaces de observar este tipo de paisaje, conocido por los
-                                    geólogos como paisaje kárstico o de tipo karst (Figura 8). Este tiene elementos que
+                                    geólogos como paisaje kárstico o de tipo karst. Este tiene elementos que
                                     lo hacen único, tanto en superficie como bajo tierra. En superficie veremos una
                                     serie de elementos geomorfológicos que indican la presencia de un relieve kárstico.
                                     Las Cavernas de las Bru jas cuentan con varios de ellos. Algunos ejemplos son las
@@ -176,7 +176,7 @@
                                     cual, gracias a la acción y descomposición de las plantas, provee el CO2 necesario
                                     para volverlas más ácidas. Una vez se cuenta con estos dos elementos, solo se
                                     necesita tiempo para ser capaces de observar este tipo de paisaje, conocido por los
-                                    geólogos como paisaje kárstico o de tipo karst (Figura 8). Este tiene elementos que
+                                    geólogos como paisaje kárstico o de tipo karst. Este tiene elementos que
                                     lo hacen único, tanto en superficie como bajo tierra. En superficie veremos una
                                     serie de elementos geomorfológicos que indican la presencia de un relieve kárstico.
                                     Las Cavernas de las Bru jas cuentan con varios de ellos. Algunos ejemplos son las
@@ -207,8 +207,8 @@
                                 <h8>Laguna del Maule</h8>
                                 <p>
                                     La Laguna del Maule (LdM), ubicada a 2165 metros de altura, es un cuerpo de agua
-                                    emplazado en un paisaje que ha sido fuertemente moldeado por la actividad volcánica
-                                    (Figura 4). De hecho, es este mismo volcanismo el que ha generado las condiciones
+                                    emplazado en un paisaje que ha sido fuertemente moldeado por la actividad volcánica. 
+                                    De hecho, es este mismo volcanismo el que ha generado las condiciones
                                     geomorfoló gicas necesarias para que el agua se embalse de manera natural aquí. El
                                     volcanismo de la laguna no es atribuible a un solo volcán, sino que se trata de un
                                     complejo volcánico, es decir una zona altamente activa donde el material se ha
@@ -482,68 +482,74 @@
         crossorigin="anonymous"></script>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            let lastScrollTop = 0;
-            const navbar = document.getElementById("navbar");
+       document.addEventListener("DOMContentLoaded", function () {
+    const navbar = document.getElementById("navbar");
+    let isScrolling;
 
-            window.onscroll = function () {
-                let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+    window.addEventListener("scroll", function () {
+        // 1. Cada vez que hay scroll, aseguramos que la barra sea visible
+        navbar.classList.remove("nav-hidden");
 
-                // Solo actúa si el usuario bajó más de 200px (para pasar el encabezado)
-                if (currentScroll > 200) {
-                    if (currentScroll > lastScrollTop) {
-                        // Bajando
-                        navbar.classList.add("nav-hidden");
-                    } else {
-                        // Subiendo
-                        navbar.classList.remove("nav-hidden");
-                    }
-                } else {
-                    // Siempre visible si estamos arriba
-                    navbar.classList.remove("nav-hidden");
-                }
+        // 2. Limpiamos el temporizador si el usuario sigue scrolleando
+        window.clearTimeout(isScrolling);
 
-                lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-            };
-        });
+        // 3. Establecemos un temporizador para ocultar la barra tras 2 segundos de inactividad
+        // (Solo si no estamos en la parte superior de la página)
+        isScrolling = setTimeout(function() {
+            if (window.scrollY > 100) { // Si bajó más de 100px
+                navbar.classList.add("nav-hidden");
+            }
+        }, 2000); // 2 segundos de visibilidad
+    }, false);
+});
     </script>
     <script>
 document.addEventListener("DOMContentLoaded", function () {
     const hamburger = document.getElementById("hamburger");
     const menu = document.querySelector(".menu");
+    const navbar = document.getElementById("navbar");
+    const header = document.querySelector(".bloque1");
 
-    // Abrir/Cerrar menú principal
+    // 1. Control del Hamburger
     hamburger.addEventListener("click", function (e) {
         e.preventDefault();
         menu.classList.toggle("show");
     });
 
+    // 2. Lógica de clics
     const menuLinks = document.querySelectorAll(".menu a");
 
     menuLinks.forEach(link => {
         link.addEventListener("click", function(e) {
-            const targetId = this.getAttribute("href");
-            const esPadreSubmenu = this.parentElement.classList.contains("sbm");
+            const liPadre = this.parentElement;
+            const esPadreSubmenu = liPadre.classList.contains("sbm");
 
             if (esPadreSubmenu) {
-// 1. Llevamos al usuario al principio de la página
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+                // SÍ queremos que la página vuelva al principio
+                e.preventDefault();
+                if (header) {
+                    header.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
 
-            // 2. Opcional: Si quieres que en móvil también despliegue el menú 
-            // al mismo tiempo que sube, puedes añadir una clase 'active'
-            this.parentElement.classList.toggle("active");
+                // PERO el menú solo se despliega, no se mueve de su lugar
+                liPadre.classList.toggle("active");
+                
             } else {
-                // Si es un link final (ej. Maule o Autores)
-                if (targetId === "#footer") {
+                // Links finales: Navegar y cerrar todo
+                const targetId = this.getAttribute("href");
+                
+                // Si es autores, al final
+                if (targetId === "#autores") {
                     e.preventDefault();
                     window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
                 }
-                // Cerramos el menú después de clickear
+
+                // Limpieza y cierre
                 setTimeout(() => {
                     menu.classList.remove("show");
+                    if (document.querySelector(".sbm.active")) {
+                        document.querySelector(".sbm.active").classList.remove("active");
+                    }
                 }, 200);
             }
         });

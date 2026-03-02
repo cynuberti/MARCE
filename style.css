@@ -9,11 +9,94 @@
   scroll-behavior: smooth;
 }
 
-body {
+body, html {
   display: flex;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  overflow-y: auto;
   flex-direction: column;
   font-family: sans-serif;
   min-height: 100vh;
+}
+
+
+
+#pie footer {
+  background-color: #67281bba;
+  color: #ffffff;
+  padding: 40px 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-container {
+  max-width: 1000px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-institucion {
+  text-align: center;
+}
+
+.f-univ {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.f-facultades {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.f-diplomatura {
+  font-size: 0.85rem;
+  font-style: italic;
+  margin-top: 5px;
+}
+
+.f-separador {
+  width: 50%;
+  border: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-autores {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  flex-wrap: wrap;
+  /* Permite que bajen si no hay espacio */
+  gap: 20px;
+}
+
+.autor {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.autor .nombre {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.autor .documento {
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+.footer-copy {
+  margin-top: 20px;
+  font-size: 0.75rem;
+  opacity: 0.6;
 }
 
 /* --- 2. HEADER Y LOGO --- */
@@ -102,6 +185,171 @@ body {
   width: 100%;
 }
 
+/*presentacion y carta*/
+
+.slides section {
+  width: 100%;
+  height: auto;
+}
+.boxinicio {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: white;
+  font-size: 6vw;
+  text-align: center;
+  text-shadow: #d27655 2px 2px;
+}
+
+.boxpresentacion {
+  text-transform: none;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  color: black;
+  font-size: 2vw;
+  font-weight: bold;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: justify;
+    margin: 20%;
+}
+
+.seccion-binacional {
+  display: flex;
+  flex-direction: row;
+  /* Alinea hijos en fila */
+  align-items: center;
+  /* Centra verticalmente el texto con la imagen */
+  justify-content: space-between;
+  width: 100%;
+  min-height: 450px;
+  background-color: #f4f4f4;
+  /* Un gris suave de fondo */
+  padding: 40px;
+  gap: 30px;
+  /* Espacio entre el texto y la imagen */
+}
+
+/* Caja de texto (Izquierda) */
+.contenido-texto {
+  flex: 1;
+  /* Toma el 50% del espacio */
+  padding: 20px;
+}
+
+.contenido-texto h2 {
+  color: #cf2e15;
+  /* El rojo de tu marca */
+  margin-bottom: 20px;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.contenido-texto p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+  text-align: justify;
+}
+
+/* Caja de imagen (Derecha) */
+.contenido-imagen {
+  flex: 1;
+  /* Toma el otro 50% */
+  display: flex;
+  justify-content: center;
+}
+
+.contenido-imagen img {
+  width: 100%;
+  max-width: 600px;
+  /* Evita que crezca demasiado en pantallas gigantes */
+  height: auto;
+  border-radius: 15px;
+  /* Bordes redondeados como en la imagen */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .seccion-binacional {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+#map {
+  height: 100%;
+  width: 100%;
+  background-color: #eee;
+}
+
+body,
+html {
+  display: flex;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  overflow-y: auto;
+  flex-direction: column;
+}
+
+#presentacion {
+  position: relative;
+}
+
+.slides section {
+  width: 100%;
+  height: auto;
+}
+.slides {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  min-height: 200px;
+}
+#Contenido1 {
+  position: relative;
+  top: 100px;
+}
+
+#contenido2 {
+  position: relative;
+  top: 100px;
+}
+
+#contenidoconsulta {
+  position: relative;
+  top: 100px;
+  height: 100%;
+  background-color: lightgray;
+}
+
+
+
+/*fin presentacion y carta*/
+
+
+
+
+
+
+
+
+
 /* --- 4. CONTENIDO Y CARTAS --- */
 section[id] { scroll-margin-top: 80px; } /* Ajuste para que el nav no tape el título */
 
@@ -139,6 +387,7 @@ section[id] { scroll-margin-top: 80px; } /* Ajuste para que el nav no tape el t�
     color: #693d04;
   }
 
+  
   .menu {
     display: none; /* Se activa con la clase .show */
     flex-direction: column;
@@ -173,5 +422,128 @@ section[id] { scroll-margin-top: 80px; } /* Ajuste para que el nav no tape el t�
   .carta { flex-direction: column; } /* Imagen arriba, texto abajo */
 }
 
+/*carta linea 1024 - 1096*/
+
+.contenedor-consultas {
+  overflow-y: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5vh;
+  background-color: white;
+
+  .carta {
+    width: 100%;
+    /* O un ancho fijo como 800px */
+    max-width: 100%;
+    height: 100%;
+    /* Ajusta la altura según necesites */
+    margin: 20px auto;
+  }
+
+  .carta .frente {
+    display: flex;
+    /* La magia: pone imagen y texto en fila */
+   /* flex-direction: row;*/
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    transform: none !important;
+    /* Desactivamos el giro si ya no lo usas */
+  }
+
+  /* Contenedor de la imagen (50% del ancho) */
+  .carta-imagen {
+    flex: 1;
+    height: 100%;
+  }
+
+  .carta-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Evita que la foto se deforme */
+  }
+
+  /* Contenedor de la información (50% del ancho) */
+  .carta-info {
+    flex: 1;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #f9f9f9;
+  }
+
+  .carta-info h8 {
+    position: static;
+    /* Quitamos el posicionamiento absoluto que tenías */
+    color: #691d04;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    background: none;
+    text-align: center;
+  }
+
+  .carta-info p {
+    font-size: 0.95rem;
+    color: #333;
+    line-height: 1.6;
+    text-align: justify;
+
+  }
+
+
+
+
+
+
+/* fin carta linea 1024-1096*/
+
+
+/* --- AJUSTE RESPONSIVE --- */
+@media (max-width: 600px) {
+  #footer {
+    padding: 30px 15px;
+  }
+
+ .slides {
+    top: 0px;
+  }
+  .hamburger {
+    visibility: visible;
+    cursor: pointer; /* Hace que aparezca la "manito" al pasar el mouse */
+    z-index: 10001;
+    display: flex;
+  }
+  .footer-autores {
+    flex-direction: column;
+    /* En celular, un autor arriba del otro */
+    gap: 15px;
+  }
+
+  .f-univ {
+    font-size: 1rem;
+  }
+
+  .f-facultades,
+  .f-diplomatura {
+    font-size: 0.8rem;
+  }
+
+ body nav {
+    justify-content: flex-start;
+  }
+.contenedor-consultas  .carta .frente {
+  flex-direction: column;
+}
+
+ 
 /* Espacio final para permitir scroll en los últimos elementos */
 footer { padding-bottom: 100px; }
+
